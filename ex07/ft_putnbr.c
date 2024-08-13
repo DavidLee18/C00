@@ -6,13 +6,13 @@
 /*   By: jaehylee <jaehylee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 22:47:39 by jaehylee          #+#    #+#             */
-/*   Updated: 2024/08/11 22:48:24 by jaehylee         ###   ########.fr       */
+/*   Updated: 2024/08/13 20:28:33 by jaehylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_nbr(int i)
+void	ft_putnbr(int i)
 {
 	char	c;
 
@@ -21,7 +21,7 @@ void	ft_nbr(int i)
 	else if (i < 0)
 	{
 		write(1, "-", 1);
-		ft_nbr(-i);
+		ft_putnbr(-i);
 	}
 	else if (i < 10)
 	{
@@ -31,7 +31,7 @@ void	ft_nbr(int i)
 	else
 	{
 		c = '0' + i % 10;
-		ft_nbr(i / 10);
+		ft_putnbr(i / 10);
 		write(1, &c, 1);
 	}
 }
